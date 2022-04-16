@@ -15,7 +15,8 @@
     "@logseq/libs": "^0.0.1-alpha.34",
     "antd": "^4.18.9",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.1",
