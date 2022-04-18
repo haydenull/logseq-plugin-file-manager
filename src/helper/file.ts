@@ -24,12 +24,14 @@ export const getFilesFromDir = async (directoryHandle: FileSystemDirectoryHandle
 
 const STUFF_DIRS = ['assets', 'draws']
 const DOCUMENT_DIRS = [/journals/, /pages/, /^logseq\/bak\/journals\//, /^logseq\/bak\/pages\//]
+const STUFF_EXCULD_FILE = ['edn']
 export const separateFiles = (files: IFile[]) => {
   const stuffFiles: IFile[] = []
   const documentFiles: IFile[] = []
   files.forEach(file => {
     const dir = file?.relativePath?.slice(0, -1)?.join('/') || ''
-    if (STUFF_DIRS.includes(dir)) {
+    const suffix = file.name.split('.').pop() || ''
+    if (STUFF_DIRS.includes(dir) && !STUFF_EXCULD_FILE.includes(suffix)) {
       stuffFiles.push(file)
     } else if (DOCUMENT_DIRS.find(regex => regex.test(dir))) {
       documentFiles.push(file)
@@ -80,10 +82,5 @@ export const deleteFile = async (dirHandle: FileSystemDirectoryHandle, file: IFi
     _dirHandle = await _dirHandle.getDirectoryHandle(relativePath[i])
   }
 
-  const res = await dirHandle.queryPermission({ mode: 'readwrite' })
-  console.log('[faiz:] === queryPermission', res, _dirHandle, relativePath[relativePath.length - 1])
-  const rres = await dirHandle.requestPermission({ mode: 'readwrite' })
-  console.log('[faiz:] === requestPermission', rres)
-
-  // return _dirHandle.removeEntry(relativePath[relativePath.length - 1])
+  return _dirHandle.removeEntry(relativePath[relativePath.length - 1])
 }

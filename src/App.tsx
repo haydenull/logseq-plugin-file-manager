@@ -87,7 +87,7 @@ const App: React.FC<{ env: string }> = ({ env }) => {
           <section className="mb-4">
             <span role="button" className="px-2 py-2 text-xs" onClick={onClickSearch}>Search Unused Stuff</span>
             {/* logseq ifrmae 目前不支持删除功能 */}
-            {/* { hasUnusedStuff && <span role="button" className="py-2 px-2 ml-2 text-xs bg-rose-500 border-rose-500 hover:bg-rose-600" onClick={onClickDelete}>Delete</span>  } */}
+            { env === 'browser' && hasUnusedStuff && <span role="button" className="py-2 px-2 ml-2 text-xs bg-rose-500 border-rose-500 hover:bg-rose-600" onClick={onClickDelete}>Delete</span>  }
           </section>
 
           { hasUnusedStuff && <div className="mb-1 text-base">Unused Stuff Files:</div>}

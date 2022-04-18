@@ -21,7 +21,7 @@ if (isDevelopment) {
 
     logseq.App.registerUIItem('toolbar', {
       key: 'logseq-plugin-react-boilerplate',
-      template: '<a data-on-click="show" class="button"><i class="ti ti-window"></i></a>',
+      template: '<a data-on-click="show" class="button"><i class="ti ti-file-report"></i></a>',
     })
 
   })
