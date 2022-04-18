@@ -24,7 +24,7 @@ export const getFilesFromDir = async (directoryHandle: FileSystemDirectoryHandle
 
 const STUFF_DIRS = ['assets', 'draws']
 const DOCUMENT_DIRS = [/journals/, /pages/, /^logseq\/bak\/journals\//, /^logseq\/bak\/pages\//]
-const STUFF_EXCULD_FILE = ['edn']
+const STUFF_EXCULD_FILE = ['edn', 'DS_Store']
 export const separateFiles = (files: IFile[]) => {
   const stuffFiles: IFile[] = []
   const documentFiles: IFile[] = []

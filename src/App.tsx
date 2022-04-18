@@ -5,7 +5,7 @@ import './App.css'
 import { deleteFile, getFilesFromDir, getUnusedFiles, IFile, separateFiles } from './helper/file'
 import { copyToClipboard, getFilePath } from './helper/util'
 
-const App: React.FC<{ env: string }> = ({ env }) => {
+const App: React.FC<{ env: 'browser' | 'logseq' }> = ({ env }) => {
 
   const [unusedStuffFiles, setUnusedStuffFiles] = useState<({ file: IFile; checked?: boolean })[]>([])
   const [status, setStatus] = useState<'unauthorized' | 'loading' | 'loaded'>('unauthorized')

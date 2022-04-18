@@ -5,8 +5,9 @@ import App from './App'
 import './index.css'
 
 const isDevelopment = import.meta.env.DEV
+const isBrowser = import.meta.env.APP_EVIROMENT === 'browser' && isDevelopment
 
-if (isDevelopment) {
+if (isBrowser) {
   renderApp('browser')
 } else {
   console.log('=== logseq-plugin-react-boilerplate loaded ===')
@@ -27,7 +28,7 @@ if (isDevelopment) {
   })
 }
 
-function renderApp(env: string) {
+function renderApp(env: 'browser' | 'logseq') {
   ReactDOM.render(
     <React.StrictMode>
       <App env={env} />
