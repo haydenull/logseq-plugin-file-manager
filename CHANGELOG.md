@@ -1,3 +1,10 @@
+# 1.0.0 (2022-04-19)
+
+
+### Features
+
+* add website ([ebfec7b](https://github.com/haydenull/logseq-plugin-file-manager/commit/ebfec7b3992941e9f03ee6de255c36168bfa2347))
+
 # [1.1.0](https://github.com/haydenull/logseq-plugin-react-boilerplate/compare/v1.0.0...v1.1.0) (2022-03-08)
 
 
