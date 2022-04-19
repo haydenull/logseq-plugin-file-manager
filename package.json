@@ -10,8 +10,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "build:browser": "tsc && vite build --mode=browser --base=/logseq-plugin-file-manager/",
-    "preview:browser": "vite preview --mode=browser --base=/logseq-plugin-file-manager/",
-    "deploy:browser": "sh deploy.sh"
+    "preview:browser": "vite preview --mode=browser --base=/logseq-plugin-file-manager/"
   },
   "dependencies": {
     "@logseq/libs": "^0.0.1-alpha.34",
