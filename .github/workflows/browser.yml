@@ -8,7 +8,7 @@ on:
       - main
 jobs:
   release:
-    name: Release
+    name: Browser Release
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout
@@ -21,7 +21,5 @@ jobs:
           node-version: 14
       - name: Install dependencies
         run: yarn
-      - name: Build
-        run: yarn build:browser
       - name: Deploy
         run: yarn deploy:browser

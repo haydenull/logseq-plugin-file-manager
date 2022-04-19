@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "build:browser": "tsc && vite build --mode=browser --base=/logseq-plugin-file-manager",
+    "build:browser": "tsc && vite build --mode=browser --base=/logseq-plugin-file-manager/",
     "preview:browser": "vite preview --mode=browser --base=/logseq-plugin-file-manager/",
     "deploy:browser": "sh deploy.sh"
   },
