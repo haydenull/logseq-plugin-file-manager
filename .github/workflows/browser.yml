@@ -1,11 +1,14 @@
 name: Browser Release
 on:
-  push:
+  workflow_dispatch:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
+  # pull_request:
+  #   branches:
+  #     - main
 jobs:
   release:
     name: Browser Release

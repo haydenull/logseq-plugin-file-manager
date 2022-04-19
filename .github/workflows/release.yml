@@ -1,11 +1,14 @@
 name: Logseq Release
 on:
-  push:
+  workflow_dispatch:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
+  # pull_request:
+  #   branches:
+  #     - main
 jobs:
   release:
     name: Logseq Release
