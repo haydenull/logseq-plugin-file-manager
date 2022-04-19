@@ -5,7 +5,7 @@ import App from './App'
 import './index.css'
 
 const isDevelopment = import.meta.env.DEV
-const isBrowser = import.meta.env.APP_EVIROMENT === 'browser' && isDevelopment
+const isBrowser = import.meta.env.VITE_APP_EVIROMENT === 'browser' || isDevelopment
 
 if (isBrowser) {
   renderApp('browser')
