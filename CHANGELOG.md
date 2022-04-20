@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/haydenull/logseq-plugin-file-manager/compare/v1.1.0...v1.2.0) (2022-04-20)
+
+
+### Features
+
+* add tooltip and document ([cd2ebaa](https://github.com/haydenull/logseq-plugin-file-manager/commit/cd2ebaad87038eff39753b67c49a086d18691277))
+
 # [1.1.0](https://github.com/haydenull/logseq-plugin-file-manager/compare/v1.0.0...v1.1.0) (2022-04-20)
 
 
