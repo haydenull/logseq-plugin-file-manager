@@ -10,7 +10,7 @@ const isBrowser = import.meta.env.VITE_APP_EVIROMENT === 'browser' || isDevelopm
 if (isBrowser) {
   renderApp('browser')
 } else {
-  console.log('=== logseq-plugin-react-boilerplate loaded ===')
+  console.log('=== logseq-plugin-file-manager loaded ===')
   logseq.ready(() => {
 
     logseq.provideModel({
@@ -21,7 +21,7 @@ if (isBrowser) {
     })
 
     logseq.App.registerUIItem('toolbar', {
-      key: 'logseq-plugin-react-boilerplate',
+      key: 'logseq-plugin-file-manager',
       template: '<a data-on-click="show" class="button"><i class="ti ti-file-report"></i></a>',
     })
 
