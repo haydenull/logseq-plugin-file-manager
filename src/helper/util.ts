@@ -10,7 +10,13 @@ export function copyToClipboard(text: string) {
   document.body.removeChild(textArea)
 }
 
-export const getFilePath = async (file: IFile) => {
+export const getFilePath = async (file: IFile, env: 'browser' | 'logseq' = 'logseq' ) => {
+  if (env === 'browser') {
+    // const fileReader = new FileReader()
+    // fileReader.readAsDataURL(file)
+    // return 
+    return URL.createObjectURL(file)
+  }
   const graph = await logseq.App.getCurrentGraph()
   if (graph) {
     const filePath = `file:///${graph.path}/${file.relativePath?.join('/')}`
@@ -18,3 +24,10 @@ export const getFilePath = async (file: IFile) => {
   }
   return Promise.reject(new Error('graph is null'))
 }
+
+// function getFileUrl (file: IFile) {
+//   if (import.meta.env.VITE_APP_ENVIORMENT === 'browser') {
+//     return URL.createObjectURL(file)
+//   }
+//   return `file:///${file.path}`
+// }

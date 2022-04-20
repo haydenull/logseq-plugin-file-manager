@@ -55,14 +55,20 @@ const App: React.FC<{ env: 'browser' | 'logseq' }> = ({ env }) => {
     setUnusedStuffFiles(unusedStuffFiles.map(f => value === f.file.name ? { ...f, checked: !f.checked } : f))
   }
   const onClickPreviewFile = async (file: IFile) => {
-    console.log('[faiz:] === file', file)
-    const filePath = await getFilePath(file)
+    const filePath = await getFilePath(file, env)
     setIframeSrc(filePath)
   }
   const onClickCopy = async (file: IFile) => {
+    if (env === 'browser') {
+      copyToClipboard(file.relativePath?.join('/') || 'path not found')
+      return
+    }
     const filePath = await getFilePath(file)
-    copyToClipboard(filePath)
+    copyToClipboard(filePath.replace('file:///', ''))
     logseq.App.showMsg('Copied to clipboard success', 'success')
+  }
+  const navToWeb = () => {
+    logseq.App.openExternalLink('https://haydenull.github.io/logseq-plugin-file-manager/')
   }
 
   useEffect(() => {
@@ -83,8 +89,9 @@ const App: React.FC<{ env: 'browser' | 'logseq' }> = ({ env }) => {
         data-theme={theme}
       >
         <div className="flex flex-col w-2/3">
-          <h3 className="mb-6">File Manager</h3>
-          <section className="mb-4">
+          <h3 className="mb-0">File Manager</h3>
+          { env === 'logseq' && <span className="text-sm text-gray-400">Plugins cannot delete files, if needed please go to the <a onClick={navToWeb}>web version</a></span> }
+          <section className="mb-4 mt-6">
             <span role="button" className="px-2 py-2 text-xs" onClick={onClickSearch}>Search Unused Stuff</span>
             {/* logseq ifrmae 目前不支持删除功能 */}
             { env === 'browser' && hasUnusedStuff && <span role="button" className="py-2 px-2 ml-2 text-xs bg-rose-500 border-rose-500 hover:bg-rose-600" onClick={onClickDelete}>Delete</span>  }
