@@ -90,7 +90,7 @@ const App: React.FC<{ env: 'browser' | 'logseq' }> = ({ env }) => {
       >
         <div className="flex flex-col w-2/3">
           <h3 className="mb-0">File Manager</h3>
-          { env === 'logseq' && <span className="text-sm text-gray-400">Plugins cannot delete files, if needed please go to the <a onClick={navToWeb}>web version</a></span> }
+          { env === 'logseq' && <span className="text-sm text-gray-400">Plugins cannot delete files, if needed please go to the <a onClick={navToWeb}>web version</a>.</span> }
           <section className="mb-4 mt-6">
             <span role="button" className="px-2 py-2 text-xs" onClick={onClickSearch}>Search Unused Stuff</span>
             {/* logseq ifrmae 目前不支持删除功能 */}
@@ -122,8 +122,8 @@ const App: React.FC<{ env: 'browser' | 'logseq' }> = ({ env }) => {
                           <input className="w-4 h-4" type="checkbox" checked={file.checked} value={file.file.name} onChange={e => onCheckedChange(e)} />
                           {file.file.name}
                         </label>
-                        <a className="ml-1" onClick={(e) => onClickPreviewFile(file.file)}><VscOpenPreview /></a>
-                        <a className="ml-1" onClick={(e) => onClickCopy(file.file)}><VscCopy /></a>
+                        <a className="ml-1 cursor-pointer" onClick={(e) => onClickPreviewFile(file.file)} data-tooltip="Preview"><VscOpenPreview /></a>
+                        <a className="ml-1 cursor-pointer" onClick={(e) => onClickCopy(file.file)} data-tooltip="Copy file path"><VscCopy /></a>
                       </div>
                     ))
                   }
