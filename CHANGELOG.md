@@ -1,3 +1,18 @@
+# [1.1.0](https://github.com/haydenull/logseq-plugin-file-manager/compare/v1.0.0...v1.1.0) (2022-04-20)
+
+
+### Bug Fixes
+
+* add web link in plugin ([d0fd0ba](https://github.com/haydenull/logseq-plugin-file-manager/commit/d0fd0bacc9fe69aa1c63cb4b8c74f0d8a6aaeb6e))
+* browser build error [skip ci] ([4ef6dd4](https://github.com/haydenull/logseq-plugin-file-manager/commit/4ef6dd4fc454c66fd408504077018e019a7d25d2))
+* browser deploy ci ([dddac32](https://github.com/haydenull/logseq-plugin-file-manager/commit/dddac32ede5fecb76a7da952ff6cc21217c938d8))
+* mannual trigger ci ([60f8eea](https://github.com/haydenull/logseq-plugin-file-manager/commit/60f8eea5194fefdfc44bfd8e251a00213fd3dfa5))
+
+
+### Features
+
+* change title ([e35b415](https://github.com/haydenull/logseq-plugin-file-manager/commit/e35b415c438fcfedd990bee25dadeb941498bf36))
+
 # 1.0.0 (2022-04-19)
 
 
