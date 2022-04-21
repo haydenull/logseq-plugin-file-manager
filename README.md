@@ -4,7 +4,7 @@
 [![latest release version](https://img.shields.io/github/v/release/haydenull/logseq-plugin-file-manager)](https://github.com/haydenull/logseq-plugin-file-manager/releases)
 [![License](https://img.shields.io/github/license/haydenull/logseq-plugin-file-manager?color=blue)](https://github.com/haydenull/logseq-plugin-file-manager/blob/main/LICENSE)
 
-**Please backup files before operation**
+**Please backup files before operation, and before deleting a file, double-check whether it is a usused file.**
 
 ## Demo
 ### logseq plugin
