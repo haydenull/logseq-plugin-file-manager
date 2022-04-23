@@ -23,7 +23,7 @@ export const getFilesFromDir = async (directoryHandle: FileSystemDirectoryHandle
 }
 
 const STUFF_DIRS = ['assets', 'draws']
-const DOCUMENT_DIRS = [/journals/, /pages/, /^logseq\/bak\/journals\//, /^logseq\/bak\/pages\//]
+const DOCUMENT_DIRS = [/^journals/, /^pages/, /^logseq\/bak\/journals\//, /^logseq\/bak\/pages\//]
 const STUFF_EXCULD_FILE = ['edn', 'DS_Store']
 export const separateFiles = (files: IFile[]) => {
   const stuffFiles: IFile[] = []
@@ -56,7 +56,7 @@ export const getUnusedFiles = async (stuffFiles: IFile[], documentFiles: IFile[]
     const text = await file.text()
     const imgMatchs = text.matchAll(MARKDOWN_IMG_REG)
     const drawMatchs = text.matchAll(DRAW_REG)
-    const imgPaths = [...imgMatchs].map(match => match[1]?.replace(/^\.\.\//, ''))
+    const imgPaths = [...imgMatchs].map(match => match[1]?.replaceAll(/\.\.\//g, ''))
     const drawPaths = [...drawMatchs].map(match => match[1])
     return [...imgPaths, ...drawPaths]
   })
