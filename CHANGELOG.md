@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/haydenull/logseq-plugin-file-manager/compare/v1.2.0...v1.3.0) (2022-04-23)
+
+
+### Features
+
+* support md file from pages subdirectory ([b840ff7](https://github.com/haydenull/logseq-plugin-file-manager/commit/b840ff701ca0b007ba4a342c17071930a51c3e56))
+
 # [1.2.0](https://github.com/haydenull/logseq-plugin-file-manager/compare/v1.1.0...v1.2.0) (2022-04-20)
 
 
