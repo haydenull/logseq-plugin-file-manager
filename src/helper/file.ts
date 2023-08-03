@@ -41,6 +41,7 @@ export const separateFiles = (files: IFile[]) => {
 }
 
 const MARKDOWN_IMG_REG = /!\[.*?\]\((.*)\)/g     // ![alt](../assets/xxx.png) ![alt](../assets/xxx.pdf)
+const OFFICE_DOC_REG = /\[.*?\]\((.*)\)/g     // [alt](../assets/xxx.xlsx) [alt](../assets/xxx.docx)
 const DRAW_REG = /\[\[(draws\/.+\.excalidraw)]]/g    // [[draws/xxx.excalidraw]]
 export const getUnusedFiles = async (stuffFiles: IFile[], documentFiles: IFile[]) => {
   const stuffFilesMap = new Map<string, number>()
@@ -55,10 +56,12 @@ export const getUnusedFiles = async (stuffFiles: IFile[], documentFiles: IFile[]
   const promises = documentFiles.map(async file => {
     const text = await file.text()
     const imgMatchs = text.matchAll(MARKDOWN_IMG_REG)
+    const officeDocMatchs = text.matchAll(OFFICE_DOC_REG)
     const drawMatchs = text.matchAll(DRAW_REG)
     const imgPaths = [...imgMatchs].map(match => match[1]?.replaceAll(/\.\.\//g, ''))
+    const officeDocPaths = [...officeDocMatchs].map(match => match[1]?.replaceAll(/\.\.\//g, ''))
     const drawPaths = [...drawMatchs].map(match => match[1])
-    return [...imgPaths, ...drawPaths]
+    return [...imgPaths, ...drawPaths, ...officeDocPaths]
   })
   const usedStuffFilesPaths = (await Promise.all(promises)).filter(paths => paths.length > 0)?.flat()
   console.log('[faiz:] === usedStuffFilesPaths', usedStuffFilesPaths)
