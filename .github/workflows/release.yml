@@ -12,7 +12,7 @@ on:
 jobs:
   release:
     name: Logseq Release
-    runs-on: ubuntu-2.04
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v3
