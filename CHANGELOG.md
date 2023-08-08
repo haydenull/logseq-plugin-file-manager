@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/haydenull/logseq-plugin-file-manager/compare/v1.3.0...v1.4.0) (2023-08-08)
+
+
+### Features
+
+* Add a matcher that supports Office document types ([#7](https://github.com/haydenull/logseq-plugin-file-manager/issues/7)) ([b026404](https://github.com/haydenull/logseq-plugin-file-manager/commit/b0264043bb3da1d2204396152739b953313b09db))
+
 # [1.3.0](https://github.com/haydenull/logseq-plugin-file-manager/compare/v1.2.0...v1.3.0) (2022-04-23)
 
 
